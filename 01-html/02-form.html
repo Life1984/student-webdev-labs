@@ -10,12 +10,58 @@
     <main>
       <!-- Add your code here -->
       <!-- Title -->
-       <h1> Roth IRA Calculator </h1>
-       
-       <div>
-       <!--- Bottom text W/Blue link -->
-       
+      <h1>Roth IRA Calculator</h1>
+      <!-- Balance and Annual Contribution -->
+      <div>
+      <form>
+        <p>
+          <label for="balance">Balance ($)</label><br />
+          <input type="text" id="balance" name="balance" />
+        </p>
+        <p>
+          <label for="contribution">Annual contribution (4)</label><br />
+          <input type="text" id="contribution" name="contribution" />
+        </p>
       </div>
+      <!-- Yes/No Button -->
+        <p>
+          Maximize contributions?<br />
+          <input type="radio" id="yes" name="maximize" value="yes" />
+          <label for="yes">Yes</label>
+
+          <input type="radio" id="no" name="maximize" value="no" />
+          <label for="no">No</label>
+        </p>
+      <div>
+        <!-- Other Boxes -->
+        <p>
+          <label for="return">Expected rate of return (5)</label><br />
+          <input type="number" id="return" name="return" />
+        </p>
+        <p>
+          <label for="current-age">Current age</label><br />
+          <input type="number" id="current-age" name="current-age" />
+        </p>
+        <p>
+          <label for="retirement-age">Retirement age</label><br />
+          <input type="number" id="retirement-age" name="retirement-age" />
+        </p>
+        <p>
+          <label for="tax-rate">Marginal tax rate (%)</label><br />
+          <input type="number" id="tax-rate" name="tax-rate" />
+        </p>
+      </div>
+      <!-- Calculate/Reset Button -->
+        <p>
+          <button type="submit">Calculate</button>
+          <button type="reset">Reset</button>
+        </p>
+      </form>
+      <!-- Bottom Link -->
+      <p>
+        This exercise is a simplified version of the Roth IRA Calculator at
+        <a href="https://www.calculator.net/roth-ira-calculator.html">Calculator.net</a>
+      </p>
     </main>
   </body>
 </html>
