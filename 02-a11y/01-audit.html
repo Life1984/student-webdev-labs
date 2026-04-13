@@ -7,25 +7,30 @@
   </head>
   <body>
     <form>
-      Name:<br />
-      <input type="text" name="name" /><br /><br />
-      Address:<br />
-      <input type="text" name="address" />
-      <br /><br />
-      City:<br />
-      <input type="text" name="city" />
-      <br /><br />
-      Zip Code:<br />
-      <input type="text" name="zip" />
-      <br /><br />
-      Credit Card Type:<br />
+      <!-- Missing form label -->
+      <label for="name">Name:<br/></label>
+      <input id="name" type="text" name="name" /><br /><br /> 
+      <!-- Missing form label -->
+      <label for="address">Address:<br /></label>
+      <input id="address" type="text" name="address" /><br /><br />
+      <!-- Missing form label -->
+      <label for="city">City:<br /></label>
+      <input id="city" type="text" name="city" /><br /><br />
+      <!-- Missing form label -->
+      <label for="code">Code:<br /></label>
+      <input id="code" type="text" name="zip" /><br /><br />
+      <!-- Missing form labels -->
+      Credit Card Type:<br/>
+      <!-- Missing fieldset type -->
       <input type="radio" name="card" value="visa" /> Visa<br />
       <input type="radio" name="card" value="mastercard" /> MasterCard<br />
-      <input type="radio" name="card" value="amex" /> American Express<br /><br />
-      Credit Card Number:<br />
-      <input type="text" name="cc_number" /><br /><br />
-      CVV:<br />
-      <input type="text" name="cvv" /><br /><br />
+      <input type="radio" name="card" value="amex" /> American Express<br /><br/>
+      <!-- Missing form label -->
+      <label for="creidt card number">Credit Card Number:<br/></label>
+      <input id="credit card number" type="text" name="cc_number" /><br /><br/>
+      <!-- Missing form label -->
+      <label for="cvv">CVV:<br /></label>
+      <input id="cvv" type="text" name="cvv" /><br /><br />
       <input type="button" value="Submit" />
     </form>
   </body>
