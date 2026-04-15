@@ -19,15 +19,18 @@
       <!-- Missing form label -->
       <label for="code">Code:<br /></label>
       <input id="code" type="text" name="zip" /><br /><br />
-      <!-- Missing form labels -->
-      Credit Card Type:<br/>
-      <!-- Missing fieldset type -->
-      <input type="radio" name="card" value="visa" /> Visa<br />
-      <input type="radio" name="card" value="mastercard" /> MasterCard<br />
-      <input type="radio" name="card" value="amex" /> American Express<br /><br/>
+      <!-- Missing form labels and  fieldset type -->
+      <form action="/card labels">
+        <fieldset>
+          <legend>Credit Card Type:</legend>
+          <label><input type="radio" name="card" value="visa" /> Visa</label><br />
+          <label><input type="radio" name="card" value="mastercard" /> MasterCard</label><br />
+          <label><input type="radio" name="card" value="amex" /> American Express</label><br /><br/>
+        </fieldset>
+      </form>
       <!-- Missing form label -->
-      <label for="creidt card number">Credit Card Number:<br/></label>
-      <input id="credit card number" type="text" name="cc_number" /><br /><br/>
+      <label for="cc_number">Credit Card Number:</label><br />
+      <input id="cc_number" type="text" name="cc_number" /><br /><br/>
       <!-- Missing form label -->
       <label for="cvv">CVV:<br /></label>
       <input id="cvv" type="text" name="cvv" /><br /><br />
