@@ -4,12 +4,179 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>CSS Exercise 01 - Books</title>
+    <title>Exercise 01 - Books</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <!-- Start with the code from the HTML folder.
-      - Make sure to fix any issues in your HTML code.
-      - Add classes to style the elements on the page. -->
+    <!-- Add your code here -->
+
+    <!-- Add semantics above the title. -->
+    <!-- Fix: Navigation is now inside semantic <header> and <nav> elements. -->
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <ul class="article-list nav-list">
+          <!-- Fix: Navbar links now point to matching section IDs. -->
+          <li><a href="#asoiaf-books">ASOIAF Books</a></li>
+          <li><a href="#first-edition-covers">First Edition Covers</a></li>
+          <li><a href="#pov-table">Table of POV Characters</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="books-page">
+      <!-- Title. -->
+      <!-- Fix: The <h1> is now inside the <main> element. -->
+      <h1>A Song of Ice and Fire - George R.R. Martin</h1>
+
+      <section id="asoiaf-books" class="page-section">
+        <!-- Primary header. -->
+        <h2>ASOIAF Books</h2>
+
+        <!-- Need three bullet points with two sub-sections below bullet
+        points one and two. -->
+        <ul class="book-list">
+          <li>
+            A Song of Ice and Fire series:
+            <ol>
+              <li>A Game of Thrones (1996)</li>
+              <li>A Clash of Kings (1998)</li>
+              <li>A Storm of Swords (2000)</li>
+              <li>A Feast for Crows (2005)</li>
+              <li>A Dance with Dragons (2011)</li>
+            </ol>
+          </li>
+
+          <li>
+            A Knight of the Seven Kingdoms (2015)
+            <ol>
+              <li>The Hedge Knight (1998)</li>
+              <li>The Sworn Sword (2003)</li>
+              <li>The Mystery Knight (2010)</li>
+            </ol>
+          </li>
+
+          <li>Fire &amp; Blood (2018)</li>
+        </ul>
+      </section>
+
+      <section id="first-edition-covers" class="page-section">
+        <!-- Secondary header. -->
+        <h2>First Edition Covers</h2>
+
+        <!-- Images of books. -->
+        <div class="cover-gallery">
+          <!-- Book1 -->
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg"
+            alt="First edition cover of A Game of Thrones"
+          />
+
+          <!-- Book2 -->
+          <img
+            src="https://jwkbooks.cdn.bibliopolis.com/pictures/24227.jpg?width=768&height=1000&fit=bounds&auto=webp&v=1562014775"
+            alt="First edition cover of A Clash of Kings"
+          />
+
+          <!-- Book3 -->
+          <img
+            src="https://lwcurrey.cdn.bibliopolis.com/pictures/158627.jpg?width=768&height=1000&fit=bounds&auto=webp&v=1727024234"
+            alt="First edition cover of A Storm of Swords"
+          />
+        </div>
+      </section>
+
+      <section id="pov-table" class="page-section">
+        <div>
+          <!-- POV Characters and Chapters Table -->
+          <div>
+            <h2>POV Character with the Most Chapters in Each Book</h2>
+          </div>
+
+          <table class="pov-table">
+            <thead>
+              <tr>
+                <!-- Upper Blocks -->
+                <th rowspan="2">POV Character</th>
+                <th colspan="5">Books</th>
+                <th rowspan="2">Total Chapters</th>
+              </tr>
+
+              <tr>
+                <!-- Book Titles -->
+                <th>A Game of Thrones</th>
+                <th>A Clash of Kings</th>
+                <th>A Storm of Swords</th>
+                <th>A Feast for Crows</th>
+                <th>A Dance with Dragons</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <!-- Eddard Stark -->
+                <td>Eddard Stark</td>
+                <td>15</td>
+                <td colspan="4">n/a</td>
+                <td>15</td>
+              </tr>
+
+              <tr>
+                <!-- Tyrion Lannister -->
+                <td>Tyrion Lannister</td>
+                <td>9</td>
+                <td>15</td>
+                <td>11</td>
+                <td>n/a</td>
+                <td>12</td>
+                <td>47</td>
+              </tr>
+
+              <tr>
+                <!-- Arya Stark -->
+                <td>Arya Stark</td>
+                <td>5</td>
+                <td>10</td>
+                <td>13</td>
+                <td>3</td>
+                <td>2</td>
+                <td>33</td>
+              </tr>
+
+              <tr>
+                <!-- Cersei Lannister -->
+                <td>Cersei Lannister</td>
+                <td colspan="3">n/a</td>
+                <td>10</td>
+                <td>n/a</td>
+                <td>10</td>
+              </tr>
+
+              <tr>
+                <!-- Jon Snow -->
+                <td>Jon Snow</td>
+                <td>9</td>
+                <td>8</td>
+                <td>12</td>
+                <td>n/a</td>
+                <td>13</td>
+                <td>42</td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+              <tr>
+                <th colspan="6">Total POV Chapters (Displayed)</th>
+                <th>147</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

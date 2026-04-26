@@ -4,15 +4,161 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>CSS Exercise 02 - Form</title>
+    <title>Exercise 02 - Form</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main>
-      <!-- Start with the code from the HTML folder.
-      - Make sure to fix any issues in your HTML code.
-      - Delete all mentions of <br>s and style the line breaks with CSS. 
-      - Add classes to style the elements on the page. -->
+
+  <body class="form-body">
+    <main class="form-page">
+      <!-- Add your code here -->
+
+      <section class="calculator-card" aria-labelledby="calculator-heading">
+        <!-- Title -->
+        <h1 id="calculator-heading">Roth IRA Calculator</h1>
+
+        <form>
+          <!-- Balance and Annual Contribution -->
+          <div>
+            <div class="form-row">
+              <label for="balance">Balance ($)</label>
+              <input type="text" id="balance" name="balance" />
+            </div>
+
+            <div class="form-row">
+              <label for="contribution">Annual contribution ($)</label>
+              <input type="text" id="contribution" name="contribution" />
+            </div>
+          </div>
+
+          <!-- Yes/No Button -->
+          <!-- Fix: Radio buttons are now grouped in a <fieldset> with a <legend>. -->
+          <fieldset class="radio-group">
+            <legend>Maximize contribution?</legend>
+
+            <div class="radio-options">
+              <div class="radio-option">
+                <input type="radio" id="yes" name="maximize" value="yes" />
+                <label for="yes">Yes</label>
+              </div>
+
+              <div class="radio-option">
+                <input type="radio" id="no" name="maximize" value="no" />
+                <label for="no">No</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div>
+            <!-- Other Boxes -->
+            <div class="form-row">
+              <label for="return-rate">Expected rate of return (%)</label>
+              <input type="number" id="return-rate" name="return-rate" />
+            </div>
+
+            <div class="form-row">
+              <label for="current-age">Current age</label>
+              <input type="number" id="current-age" name="current-age" />
+            </div>
+
+            <div class="form-row">
+              <label for="retirement-age">Retirement age</label>
+              <input type="number" id="retirement-age" name="retirement-age" />
+            </div>
+
+            <div class="form-row">
+              <label for="tax-rate">Marginal tax rate (%)</label>
+              <input type="number" id="tax-rate" name="tax-rate" />
+            </div>
+          </div>
+
+          <!-- Calculate/Reset Button -->
+          <div class="button-row">
+            <button class="calculate-button" type="submit">Calculate</button>
+            <button class="reset-button" type="reset">Reset</button>
+          </div>
+        </form>
+
+        <!-- Bottom Link -->
+        <p class="calculator-note">
+          This exercise is a simplified version of the Roth IRA Calculator at
+          <a href="https://www.calculator.net/roth-ira-calculator.html">Calculator.net</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html><!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 02 - Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="form-body">
+    <main class="form-page">
+      <section class="calculator-card" aria-labelledby="calculator-heading">
+        <h1 id="calculator-heading">Roth IRA Calculator</h1>
+
+        <form>
+          <div class="form-row">
+            <label for="balance">Balance ($)</label>
+            <input type="text" id="balance" name="balance" />
+          </div>
+
+          <div class="form-row">
+            <label for="contribution">Annual contribution ($)</label>
+            <input type="text" id="contribution" name="contribution" />
+          </div>
+
+          <fieldset class="radio-group">
+            <legend>Maximize contribution?</legend>
+
+            <div class="radio-options">
+              <div class="radio-option">
+                <input type="radio" id="yes" name="maximize" value="yes" />
+                <label for="yes">Yes</label>
+              </div>
+
+              <div class="radio-option">
+                <input type="radio" id="no" name="maximize" value="no" />
+                <label for="no">No</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-row">
+            <label for="return-rate">Expected rate of return (%)</label>
+            <input type="number" id="return-rate" name="return-rate" />
+          </div>
+
+          <div class="form-row">
+            <label for="current-age">Current age</label>
+            <input type="number" id="current-age" name="current-age" />
+          </div>
+
+          <div class="form-row">
+            <label for="retirement-age">Retirement age</label>
+            <input type="number" id="retirement-age" name="retirement-age" />
+          </div>
+
+          <div class="form-row">
+            <label for="tax-rate">Marginal tax rate (%)</label>
+            <input type="number" id="tax-rate" name="tax-rate" />
+          </div>
+
+          <div class="button-row">
+            <button class="calculate-button" type="submit">Calculate</button>
+            <button class="reset-button" type="reset">Reset</button>
+          </div>
+        </form>
+
+        <p class="calculator-note">
+          This exercise is a simplified version of the Roth IRA Calculator at
+          <a href="https://www.calculator.net/roth-ira-calculator.html">Calculator.net</a>
+        </p>
+      </section>
     </main>
   </body>
 </html>

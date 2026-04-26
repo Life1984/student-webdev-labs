@@ -1,1 +1,261 @@
 /* Add your CSS code here  */
+:root {
+  --ice-blue-juvie: #8fbcd4;
+  --gothic-gray-blue: #6f8796;
+  --dark-slate-infinity: #1f2a33;
+  --midnight-blue: #161678;
+  --light-gray: #eeeeee;
+  --border-gray: #dddddd;
+  --text-dark: #333333;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  color: var(--text-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+}
+/* Exercise 01 - Books */
+.site-header {
+  background-color: var(--dark-slate-infinity);
+}
+.navbar {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin: 0;
+  padding: 18px 24px;
+  list-style: none;
+}
+.nav-list a {
+  display: inline-block;
+  padding: 10px 16px;
+  color: var(--ice-blue-juvie);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--dark-slate-infinity);
+  background-color: var(--ice-blue-juvie);
+}
+.books-page {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 42px 70px 64px;
+}
+.books-page h1 {
+  margin: 0 0 42px;
+  color: var(--gothic-gray-blue);
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+.page-section {
+  margin-bottom: 44px;
+  scroll-margin-top: 24px;
+}
+.page-section h2 {
+  margin: 0 0 22px;
+  padding-bottom: 12px;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-gray);
+}
+.book-list {
+  margin: 0;
+  padding-left: 22px;
+  line-height: 1.7;
+}
+.book-list ol {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.book-list li {
+  margin-bottom: 6px;
+}
+.cover-gallery {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: stretch;
+}
+.cover-gallery img {
+  width: 31%;
+  max-width: 280px;
+  height: 420px;
+  object-fit: cover;
+  border: 2px solid var(--border-gray);
+  border-radius: 6px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.cover-gallery img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 16px rgb(0 0 0 / 25%);
+}
+.pov-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+.pov-table th,
+.pov-table td {
+  padding: 14px 12px;
+  border: 1px solid var(--border-gray);
+}
+.pov-table thead th,
+.pov-table tfoot th {
+  background-color: var(--light-gray);
+  font-weight: 700;
+}
+
+.pov-table tfoot th:first-child {
+  text-align: center;
+}
+/* Exercise 02 - Form */
+.form-body {
+  min-height: 100vh;
+  background-color: #05054b;
+}
+.form-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 24px;
+}
+.calculator-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 64px 54px 56px;
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+.calculator-card h1 {
+  margin: 0 0 52px;
+  color: var(--midnight-blue);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 265px;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 14px;
+}
+.form-row label,
+.radio-group legend {
+  font-size: 1.25rem;
+}
+.form-row input {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  border: 1px solid #c9c9c9;
+  border-radius: 6px;
+}
+
+.radio-group {
+  margin: 8px 0 22px;
+  padding: 0;
+  border: 0;
+}
+.radio-options {
+  display: flex;
+  gap: 28px;
+  margin-top: 12px;
+  margin-left: 60px;
+}
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.radio-option input {
+  width: 18px;
+  height: 18px;
+}
+.radio-option label {
+  font-size: 1.25rem;
+}
+.button-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 54px;
+}
+.button-row button {
+  padding: 16px 24px;
+  font-size: 1.15rem;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.calculate-button {
+  color: #ffffff;
+  background-color: var(--midnight-blue);
+}
+.reset-button {
+  color: #000000;
+  background-color: #dddddd;
+}
+.calculator-note {
+  margin: 44px 0 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.calculator-note a {
+  color: var(--midnight-blue);
+}
+/* Small screen support */
+@media (max-width: 700px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .books-page {
+    padding: 32px 24px 48px;
+  }
+  .cover-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cover-gallery img {
+    width: 100%;
+    max-width: 320px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .calculator-card {
+    padding: 42px 28px;
+  }
+  .calculator-card h1 {
+    font-size: 2.25rem;
+  }
+  .button-row {
+    grid-template-columns: 1fr;
+  }
+}
