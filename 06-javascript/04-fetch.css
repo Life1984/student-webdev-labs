@@ -1,0 +1,187 @@
+:root {
+  --main-color: #121212;
+  --main-light-color: #ffffff;
+  --bg-color: #333333;
+  --pokemon-yellow: #faca15;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--main-color);
+  background-color: var(--bg-color);
+}
+
+/*Top navigation area*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--pokemon-yellow);
+}
+
+.brand-logo {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+/*Search box created in 04-fetch.js*/
+.search-box {
+  width: min(320px, 100%);
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.35rem;
+  font-size: 1rem;
+}
+
+.search-box:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/*Main area that holds either the loader, message, or Pokemon cards*/
+.pokemon-container {
+  width: min(1200px, 100%);
+  min-height: calc(100vh - 88px);
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/*Full-width loader area*/
+.loader-wrapper {
+  min-height: 50vh;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-light-color);
+  font-size: 1.1rem;
+}
+
+/*Required loader.gif image*/
+.loader-gif {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/*
+CSS fallback spinner
+Keeps a loader visible even if the GIF file is missing or named differently
+*/
+.loader-spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid rgba(255, 255, 255, 0.25);
+  border-top-color: var(--main-light-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/*
+Hide the CSS spinner when loader.gif is available.
+JavaScript adds .is-missing if the GIF fails to load
+*/
+.loader-gif:not(.is-missing) + .loader-spinner {
+  display: none;
+}
+
+.loader-gif.is-missing + .loader-spinner {
+  display: block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Individual Pokemon card*/
+.pokemon-card {
+  width: 100%;
+  max-width: 210px;
+  min-height: 250px;
+  padding: 1.25rem;
+  background-color: var(--main-light-color);
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/*The card turns yellow when hovered*/
+.pokemon-card:hover,
+.pokemon-card:focus {
+  background-color: var(--pokemon-yellow);
+  transform: translateY(-8px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.35);
+  outline: 3px solid var(--main-light-color);
+  outline-offset: 4px;
+}
+
+.pokemon-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.pokemon-card h2 {
+  margin: 0.75rem 0 1rem;
+  font-size: 1.35rem;
+  text-transform: capitalize;
+}
+
+/*Holds one or more type badges*/
+.type-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.type-badge {
+  color: var(--main-light-color);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+/*Error and no-results messages*/
+.no-results {
+  grid-column: 1 / -1;
+  color: var(--main-light-color);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/*Keep the layout usable on smaller screens*/
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .brand-logo {
+    text-align: center;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}

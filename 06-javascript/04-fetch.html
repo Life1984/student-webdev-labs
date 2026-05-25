@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--Basic page metadata-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Tab title-->
+    <title>JavaScript Exercise 04 - Fetch</title>
+
+    <!--External stylesheet for the Pokedex page-->
+    <link rel="stylesheet" href="04-fetch.css" />
+
+    <!--defer runs after HTML has been parsed-->
+    <script defer src="04-fetch.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <!--he search box itself is created and inserted by JavaScript-->
+      <nav class="navbar">
+        <h1 class="brand-logo">Pokedex</h1>
+      </nav>
+
+      <!--JavaScript replaces this section with Pokemon cards after fetching data-->
+      <section id="pokemon-container" class="pokemon-container">
+        <div class="loader-wrapper">
+          <!--Path for loader gif-->
+          <img
+            class="loader-gif"
+            src="images/loader.gif"
+            alt="Loading Pokémon"
+          />
+
+          <!--Appears only if images/loader.gif is missing or cannot load-->
+          <div class="loader-spinner" aria-hidden="true"></div>
+
+          <p>Fetching data...</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
