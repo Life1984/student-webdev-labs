@@ -4,35 +4,50 @@ const querystring = require('node:querystring');
 
 const port = process.env.PORT || 5002;
 
+// Static file server to serve files from the exercise folder
 const file = new static.Server('./exercise');
 
 const server = http.createServer((req, res) => {
-  // main route
+  // Main route to serve the welcome page
   if (req.method === 'GET' && req.url === '/') {
     file.serveFile('/welcome.html', 200, {}, req, res);
   }
-  // form route
-  else if (req.method === 'GET' && req.url === '') {
-    // fill out this route
+
+  // Form route to serve the form page
+  else if (req.method === 'GET' && req.url === '/form') {
+    file.serveFile('/form.html', 200, {}, req, res);
   }
-  // form submission
-  else if (req.method === 'POST' && req.url === '') {
+
+  // Form submission route to handle submitted form data
+  else if (req.method === 'POST' && req.url === '/formExerciseSubmit') {
     let body = '';
 
+    // Listener to collect form data as it is received
     req.on('data', (chunk) => {
-      body += chunk;
+      body += chunk.toString();
     });
 
+    // Listener to process the form data after it is fully received
     req.on('end', () => {
       const userdata = querystring.parse(body);
-      const { usernameInput: name, emailInput: email } = userdata;
 
+      // Variables to store submitted name and email values
+      const name = userdata.usernameInput;
+      const email = userdata.emailInput;
+
+      // Response page that displays the submitted information
       res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.write(`<p>Thank you for submitting your information: </p>`);
+      res.write('<p>Thank you for submitting your information:</p>');
       res.write(`<p>Name: ${name}</p>`);
       res.write(`<p>Email: ${email}</p>`);
       res.end();
     });
+  }
+
+  // Fallback route for any unknown page
+  else {
+    res.writeHead(404, { 'Content-Type': 'text/html' });
+    res.end('<h1>404 Not Found</h1>');
   }
 });
 

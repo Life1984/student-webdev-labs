@@ -4,24 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap stylesheet for page layout and styling -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+
     <title>Form Submission</title>
   </head>
+
   <body
-    class="bg-primary min-vh-100 d-flex align-items-center justify-content-center">
-    <main class="container w-50 aling-items-center p-4 bg-light">
+    class="bg-primary min-vh-100 d-flex align-items-center justify-content-center"
+  >
+    <main class="container w-50 align-items-center p-4 bg-light">
       <h1 class="mb-4 text-center">Form Submission</h1>
+
+      <!-- Form action to send submitted data to the server route -->
       <form method="post" action="/formExerciseSubmit">
         <div class="mb-3">
-          <label class="form-label">Name</label>
-          <input type="text" class="form-control" />
+          <!-- Label connected to the name input for accessibility -->
+          <label class="form-label" for="usernameInput">Name</label>
+
+          <!-- ID and Name = server can read this input value -->
+          <input
+            type="text"
+            id="usernameInput"
+            name="usernameInput"
+            class="form-control"
+          />
         </div>
+
         <div class="mb-3">
-          <label class="form-label">Email address</label>
-          <input type="email" class="form-control" />
+          <!-- Label connected to the email input for accessibility -->
+          <label class="form-label" for="emailInput">Email address</label>
+
+          <!-- ID and Name = server can read this input value -->
+          <input
+            type="email"
+            id="emailInput"
+            name="emailInput"
+            class="form-control"
+          />
         </div>
+
+        <!-- Submit button to send the form data -->
         <button type="submit" class="btn btn-primary w-100">Submit</button>
       </form>
     </main>
